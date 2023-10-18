@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background: linear-gradient(to bottom right,#D0E7D2, #79AC78);
+  font-family: 'Roboto', sans-serif;
+}

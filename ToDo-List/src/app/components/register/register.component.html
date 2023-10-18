@@ -1,0 +1,25 @@
+<div class="container">
+  <ngb-alert class="alert" #selfClosingAlert *ngIf="alert" type="danger" (closed)="close()">There's no account with that information.</ngb-alert>
+  <p>Register</p>
+  <form [formGroup]="registerForm" (submit)="submitForm()">
+    <div class="form-field">
+      <label for="name">Name</label>
+      <br>
+      <input id="name" formControlName="name" type="text">
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <br>
+      <input id="email" formControlName="email" type="email" required>
+    </div>
+    <div class="form-field">
+      <label for="pass">Password</label>
+      <br>
+      <input id="pass" formControlName="pass" type="password" required>
+    </div>
+    <div class="btn-container">
+      <button class="btn-submit" type="submit">Register</button>
+      <span>Already have an account? <a routerLink="/login">Log In</a></span>
+    </div>
+  </form>
+</div>

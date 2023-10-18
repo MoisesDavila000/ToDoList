@@ -1,0 +1,65 @@
+<div class="container">
+  <!-- navbar -->
+  <nav class="nav-bar">
+    <p>Hello, {{userName}}</p>
+    <button class="btn-logout" (click)="logOut()">Log Out</button>
+  </nav>
+
+  <!-- modal -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" *ngIf="!editing; else editText">Add to List</h4>
+      <ng-template #editText> <h4 class="modal-title">Edit Item</h4> </ng-template>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="listForm" (submit)="submitForm()">
+        <div class="form-field">
+          <label for="name">Task</label>
+          <br>
+          <input id="name" formControlName="name" type="text">
+        </div>
+        <div class="form-field">
+          <label for="date">Date</label>
+          <br>
+          <input id="date" formControlName="date" type="date" required>
+        </div>
+        <div class="btn-container modal-footer">
+          <button class="btn-save" type="submit" *ngIf="!editing; else editBtn">Save</button>
+          <ng-template #editBtn>
+            <button class="btn-save" type="submit">Edit</button>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+
+  <!-- List -->
+  <div class="list">
+    <div class="title">
+      <p>To Do List</p>
+    </div>
+    <div class="content">
+      <div class="list-info" style="text-align: center; margin: auto; justify-content:center" *ngIf="taskList.length === 0">
+        <p>
+          There aren't tasks uploaded, add one.
+        </p>
+      </div>
+      <div class="list-item" *ngFor="let task of taskList">
+        <div class="list-info" (click)="complete(task._id, task.completed)">
+          <p>{{task.name}}</p>
+          <p>Fecha limite: {{task.date}}</p>
+          <p>Completada:
+            <i *ngIf="task.completed; else notCompleted" class="fa-solid fa-check" style="align-self: center; margin-left: 10px"></i>
+            <ng-template #notCompleted><i class="fa-solid fa-x" style="align-self: center; margin-left: 10px"></i></ng-template>
+          </p>
+        </div>
+        <div class="list-btn">
+          <i class="fa-solid fa-pen-to-square" (click)="edit(task._id, task.name, task.date, content)"></i>
+          <i class="fa-solid fa-trash" (click)="delete(task._id)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn-add" (click)="addToList(content)"> Add </button>
+</div>

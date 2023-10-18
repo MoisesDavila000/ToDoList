@@ -1,0 +1,274 @@
+@media (min-width:1001px){
+
+  .content{
+    min-height: 400px;
+    max-height: 400px;
+  }
+
+  .list{
+    width: 75%;
+  }
+
+  .list-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20%;
+  }
+
+  .list-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 1000px) and (min-width: 399px){
+  .content{
+    min-height: 700px;
+  }
+
+  .list{
+    margin: 25px;
+    width: 75%;
+    height: 700px;
+  }
+
+  .list-item{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .list-info{
+    width: 70%;
+  }
+
+  .list-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25%;
+  }
+}
+
+@media (max-width: 400px){
+  .content{
+    min-height: 600px;
+  }
+
+  .list{
+    margin: 25px;
+    width: 80%;
+    height: 600px;
+  }
+
+  .list-item{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 15px;
+  }
+
+}
+
+.container{
+  min-height: 100vh;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.nav-bar{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+
+  background: #618264;
+}
+
+.nav-bar p{
+  margin: 10px auto 10px 25px;
+  font-size: 25px;
+  color: #D0E7D2;
+  text-shadow: #53453F 2px 1px;
+  font-weight: 500;
+}
+
+.btn-logout{
+  background: #D0E7D2;
+  border: 1px solid #79ac78;
+  border-radius: 5px;
+  margin: 10px 25px 10px auto;
+  font-size: 15px;
+  font-weight: 500;
+  color: #79ac78;
+  width: 100px;
+}
+
+.btn-logout:hover{
+  background: #79ac78;
+  color: #D0E7D2;
+}
+
+
+.title{
+  border-top: 1px solid #D0E7D2;
+  border-left: 1px solid #D0E7D2;
+  border-right: 1px solid #D0E7D2;
+  border-radius: 5px 5px 0 0;
+  background: #618264;
+
+  text-align: center;
+
+  text-shadow: #53453F 2px 1px;
+}
+
+
+.title p{
+  margin: 0;
+  padding: 0;
+
+  font-size: 30px;
+  font-weight: 700;
+  color: #D0E7D2;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  border: 1px solid #D0E7D2;
+  background: #D0E7D2;
+  border-radius: 0 0 10px 10px;
+}
+
+.content::-webkit-scrollbar{
+  border: 1px solid #618264;
+  border-radius: 10px;
+  background: #D0E7D2;
+}
+
+.content::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: #618264
+}
+
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #618264;
+}
+
+.list-item:hover{
+  cursor: pointer;
+}
+
+.list-info{
+  align-items: center;
+}
+
+.list-info p{
+  min-width: 300px;
+  max-width: 300px;
+  display: flex;
+  overflow-wrap: anywhere;
+  font-size: 20px;
+  margin: 20px;
+  color: #53453F;
+}
+
+.btn-add{
+  background: #D0E7D2;
+  border: 2px solid #79ac78;
+  border-radius: 10px;
+
+  padding: 10px;
+  width: 200px;
+  margin-top: 20px;
+
+  font-size: 20px;
+  color: #618264;
+}
+
+.btn-add:hover{
+  background: #79ac78;
+  color: #D0E7D2;
+}
+
+.modal-header{
+  background: #D0E7D2;
+  border-top: 3px solid #618264;
+  border-left: 3px solid #618264;
+  border-right: 3px solid #618264;
+  border-bottom: 1px solid #618264;
+  border-radius: 5px 5px 0 0;
+
+  box-shadow: 8px 8px rgba(83, 69, 63, 0.2);
+
+}
+
+.modal-title{
+  font-size: 25px;
+  font-weight: 700;
+  color: #415543;
+}
+
+.modal-body{
+  background: #D0E7D2;
+  border: 3px solid #618264;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  box-shadow: 8px 8px rgba(83, 69, 63, 0.2);
+
+}
+
+.btn-save{
+  background: #D0E7D2;
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px;
+  width: 80px;
+  margin-top: 20px;
+
+  font-size: 20px;
+  color: #618264;
+}
+
+.btn-save:hover{
+  background: #79ac78;
+  color: #D0E7D2;
+}
+
+
+.form-field label{
+  font-size: 25px;
+  font-weight: 500;
+  color: #415543;
+}
+
+.form-field input{
+  background: #D0E7D2;
+  border: 2px solid #415543;
+  border-radius: 5px;
+  width: 100%;
+  color: #415543;
+}
